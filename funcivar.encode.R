@@ -7,19 +7,14 @@ library(GenomicRanges)
 library(VariantAnnotation)
 library(UpSetR)
 norm_NRF2mut = fread("~/normal.NRF2mut.metilene_sorted.out", sep="\t")
-norm_NRF2WT = fread("~/normal.NRF2WT.metilene_sorted.out", sep="\t")
+
 #trying different approach here
 #bg_NRF2WT_NRF2mut = fread("~/NRF2WT.NRF2mut.metilene_sorted.out", sep="\t")
 bg_NRF2WT_NRF2mut = fread("~/NRF2WT.NRF2mut.metilene_sorted.version2.out", sep="\t")
 fg_NRF2WT_NRF2mut <- fread("~/NRF2WT.NRF2mut.metilene.sorted.q.out_qval.0.05.out")
-bg_normal_NRF2mut = fread("~/NRF2WT.NRF2mut.metilene_sorted.version2.out", sep="\t")
-fg_normal_NRF2mut <- fread("~/normal.NRF2mut.metilene.sorted.q.out_qval.0.05.out")
-fg_normal_NRF2mut = fread("~/normal.NRF2mut.metilene_sorted.out", sep="\t")
-fg_normal_NRF2WT <- fread("~/normal.NRF2WT.metilene.sorted.q.out_qval.0.05.out")
-bg_normal_NRF2WT = fread("~/normal.NRF2WT.metilene_sorted.out", sep="\t")
+
 input_NRF2WT_NRF2mut = fread("~/metilene_NRF2mut_NRF2WT.input", sep="\t")
-input_normal_NRF2mut = fread("~/metilene_normal-NRF2mut_8.22.17.input", sep="\t")
-input_normal_NRF2WT = fread("~/metilene_normal_NRF2WT_8.22.17.input", sep="\t")
+
 statehub.encode.aws <- "http://s3-us-west-2.amazonaws.com/statehub-trackhub/tracks/5813b67f46e0fb06b493ceb0/hg38/ENCODE/"
 segmentation.files <- c(
   paste0(statehub.encode.aws,
